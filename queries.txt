@@ -1,0 +1,22 @@
+user.objects.create(first_name="Ben", last_name="Cossum", email_address="ben@fakemail.com", age=32)
+
+user.objects.create(first_name="Steph", last_name="Parker",email_address="steph@fakemail.com", age=31)
+
+user.objects.create(first_name="Vin", last_name="Odinson"email_address="vin@fakemail.com", age=40)
+
+user.objects.all()
+
+user.objects.last()
+
+user.objects.first()
+
+user_to_update = user.objects.get(id=3)
+user_to_update.last_name = "Pancakes"
+user_to_update.save()
+
+user_to_delete = user.objects.get(id=2)
+user_to_delete.delete()
+
+user.objects.all().order_by("first_name")
+user.objects.all().order_by("-first_name")
+
